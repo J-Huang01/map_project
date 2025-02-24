@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Maps Distance Calculator</title>
+    <script src="config.js"></script>
+    <script>
+      const apiKey = API_KEY;
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+      document.head.appendChild(script);
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Google Maps Distance Calculator</h2>
+      <input id="origin" type="text" placeholder="Enter starting address" />
+      <input
+        id="destination"
+        type="text"
+        placeholder="Enter destination address"
+      />
+      <button onclick="calculateDistance()">Calculate Distance</button>
+      <p id="distance-result"></p>
+      <div id="map"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
